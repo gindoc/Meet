@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">data</string>
+    <string name="api">http://192.168.191.10:8080/yumnote/api/</string>
 </resources>
