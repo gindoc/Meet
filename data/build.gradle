@@ -42,4 +42,6 @@ dependencies {
     //timber
     compile "com.jakewharton.timber:timber:$rootProject.timberVersion"
     compile project(':domain')
+
+    testCompile "org.mockito:mockito-core:2.8.9"
 }

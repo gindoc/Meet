@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
-import com.cwenhui.data.local.Const;
+import com.cwenhui.data.Const;
 
 public class Saver {
     private static SharedPreferences sharePref;
@@ -54,7 +54,7 @@ public class Saver {
 //        saveSerializableObject(null, Const.SharePreferenceKey.USER);
 //    }
 //
-//    public static void login(User user, String token) {
+//    public static void activity_login(User user, String token) {
 //        setLoginState(true);
 //        setToken(token);
 //        saveSerializableObject(user, Const.SharePreferenceKey.USER);

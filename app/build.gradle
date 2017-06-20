@@ -65,4 +65,9 @@ dependencies {
 
     compile project(':data')
     compile project(':domain')
+
+    androidTestCompile "org.mockito:mockito-core:2.8.9"
+    testCompile "org.mockito:mockito-core:2.8.9"
+
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }

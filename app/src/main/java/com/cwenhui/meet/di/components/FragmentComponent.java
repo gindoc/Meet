@@ -2,6 +2,7 @@ package com.cwenhui.meet.di.components;
 
 
 import com.cwenhui.meet.di.modules.FragmentModule;
+import com.cwenhui.meet.modules.navigation.index.IndexFragment;
 
 import dagger.Subcomponent;
 
@@ -12,4 +13,6 @@ import dagger.Subcomponent;
  */
 @Subcomponent(modules = FragmentModule.class)
 public interface FragmentComponent {
+
+    void inject(IndexFragment indexFragment);
 }

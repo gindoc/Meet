@@ -3,7 +3,7 @@ package com.cwenhui.meet.di.modules;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
 
-import com.cwenhui.data.remote.service.Api;
+import com.cwenhui.data.net.Api;
 import com.cwenhui.meet.BuildConfig;
 import com.cwenhui.meet.R;
 import com.cwenhui.meet.utils.ComponentHolder;
@@ -69,17 +69,17 @@ public class DataManagerModule {
 
     private String createResponseBody(Interceptor.Chain chain) {
         HttpUrl uri = chain.request().url();
-//        String path = uri.url().getPath();
+        String path = uri.url().getPath();
         StringBuffer response = new StringBuffer();
         BufferedReader reader;
         AssetManager assetManager = ComponentHolder.getAppComponent().getContext().getAssets();
         try {
             String fileName;
-//            if (path.matches("^(/noteBooks)")){
-//                fileName = "NoteBooks.json";
-//            }else{
+            if (path.matches("^(/user)")){
+                fileName = "user.json";
+            }else{
                 fileName = "SlideUrl.json";
-//            }
+            }
             reader = new BufferedReader(new InputStreamReader(assetManager.open(fileName)));
             String line = "";
             while ((line = reader.readLine()) != null) {
@@ -103,8 +103,7 @@ public class DataManagerModule {
                 Request realRequest = null;
                 Timber.d("requestBody : %s", bodyToString(request.body()));
                 Response intercepterResponse = null;
-                if (request.url().toString().contains("user")
-                        || request.url().toString().contains("note")) {
+                if (request.url().toString().contains("note")) {
                     realRequest = request.newBuilder()
                             .build();
                 } else {

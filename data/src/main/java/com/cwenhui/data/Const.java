@@ -1,4 +1,4 @@
-package com.cwenhui.data.local;
+package com.cwenhui.data;
 
 /**
  * Author: GIndoc on 2017/4/9 20:42
