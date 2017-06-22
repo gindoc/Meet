@@ -25,74 +25,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <!--<android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/tv_phone"
-                    android:layout_width="0dp"
-                    android:layout_height="55dp"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="48dp"
-                    android:gravity="center_vertical"
-                    android:text="输入手机号"
-                    android:textSize="@dimen/x13"
-                    android:textColor="#797979"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_marginTop="48dp"
-                    android:layout_height="55dp"
-                    android:inputType="phone"
-                    android:layout_marginEnd="24dp"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:ems="10"
-                    android:id="@+id/et_phone"
-                    android:layout_marginStart="16dp"
-                    app:layout_constraintLeft_toRightOf="@+id/tv_phone"
-                    android:hint="请输入手机号"/>
-
-                <View
-                    android:layout_width="395dp"
-                    android:layout_height="1dp"
-                    android:background="#808080"
-                    android:layout_marginTop="@dimen/x8"
-                    android:layout_marginStart="24dp"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_phone"
-                    app:layout_constraintRight_toRightOf="@+id/et_phone"
-                    app:layout_constraintLeft_toLeftOf="@+id/tv_phone"/>
-
-
-                <TextView
-                    android:id="@+id/tv_pwd"
-                    android:layout_height="55dp"
-                    android:text="输入登录密码"
-                    android:gravity="center_vertical"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_phone"
-                    android:layout_marginTop="@dimen/x33"
-                    android:textSize="@dimen/x13"
-                    android:textColor="#797979"
-                    app:layout_constraintLeft_toLeftOf="@+id/tv_phone"
-                    android:layout_width="wrap_content"/>
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_marginTop="42dp"
-                    android:layout_height="55dp"
-                    android:inputType="textPassword"
-                    android:layout_marginEnd="24dp"
-                    android:hint="请输入登录密码"
-                    android:layout_marginStart="@dimen/x16"
-                    app:layout_constraintTop_toBottomOf="@+id/et_phone"
-                    app:layout_constraintLeft_toRightOf="@+id/tv_pwd"
-                    app:layout_constraintRight_toRightOf="parent"
-                    />
-            </android.support.constraint.ConstraintLayout>-->
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -118,6 +50,7 @@
                     android:layout_marginLeft="@dimen/x10"
                     android:layout_toRightOf="@id/tv_phone"
                     android:hint="请输入手机号 "
+                    android:textSize="@dimen/x13"
                     android:textColorHint="#c7c7c7"/>
 
                 <View
@@ -147,6 +80,7 @@
                     android:layout_marginLeft="@dimen/x10"
                     android:layout_toRightOf="@id/tv_pwd"
                     android:hint="请输入登录密码"
+                    android:textSize="@dimen/x13"
                     android:textColorHint="#c7c7c7"/>
 
                 <View
@@ -176,11 +110,12 @@
                     android:layout_marginLeft="@dimen/x10"
                     android:layout_toRightOf="@id/tv_captcha"
                     android:hint="请输入验证码"
+                    android:textSize="@dimen/x13"
                     android:textColorHint="#c7c7c7"/>
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/x73"
+                    android:layout_height="@dimen/x33"
                     android:layout_alignBaseline="@id/et_captcha"
                     android:layout_alignParentRight="true"
                     android:background="@drawable/color_primary_round_rect"

@@ -1,6 +1,7 @@
 package com.cwenhui.meet.test.module.login;
 
 import com.cwenhui.domain.model.User;
+import com.cwenhui.domain.model.response.Response;
 import com.cwenhui.domain.usecase.UserCase;
 import com.cwenhui.meet.modules.login.LoginContract;
 import com.cwenhui.meet.modules.login.LoginPresenter;
@@ -43,7 +44,7 @@ public class LoginPresenterTest {
     UserCase userCase;
 
     @Mock
-    LifecycleTransformer<User> lifecycleTransformer;
+    LifecycleTransformer<Response<User>> lifecycleTransformer;
 
     @Before
     public void setup() {
@@ -54,11 +55,13 @@ public class LoginPresenterTest {
 
     @Test
     public void testLogin() {
+        Response<User> response = new Response<>();
         User user = new User();
         user.setUsername("chenwenhui");
         user.setPwd("heihei");
-        Observable<User> observable = Observable.just(user);
-        when(loginView.<User>getBindToLifecycle()).thenReturn(lifecycleTransformer);
+        response.setData(user);
+        Observable<Response<User>> observable = Observable.just(response);
+        when(loginView.<Response<User>>getBindToLifecycle()).thenReturn(lifecycleTransformer);
         when(userCase.login(anyString(), anyString())).thenReturn(observable);
         when(observable.compose(lifecycleTransformer)).thenReturn(observable);
         mPresenter.login("111","222");

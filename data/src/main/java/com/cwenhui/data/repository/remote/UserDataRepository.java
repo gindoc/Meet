@@ -2,6 +2,7 @@ package com.cwenhui.data.repository.remote;
 
 import com.cwenhui.data.net.Api;
 import com.cwenhui.domain.model.User;
+import com.cwenhui.domain.model.response.Response;
 import com.cwenhui.domain.repository.UserRepository;
 
 import javax.inject.Inject;
@@ -23,7 +24,7 @@ public class UserDataRepository implements UserRepository {
     }
 
     @Override
-    public Observable<User> login(String username, String pwd) {
+    public Observable<Response<User>> login(String username, String pwd) {
         return api.login(username, pwd);
     }
 }

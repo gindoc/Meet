@@ -1,5 +1,7 @@
 package com.cwenhui.meet.modules.register;
 
+import android.content.Context;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -47,4 +49,7 @@ public class RegisterActivity extends BaseActivity<RegisterContract.View, Regist
 
     }
 
+    public static Intent getStartIntent(Context context) {
+        return new Intent(context, RegisterActivity.class);
+    }
 }

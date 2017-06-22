@@ -1,6 +1,7 @@
 package com.cwenhui.domain.repository;
 
 import com.cwenhui.domain.model.User;
+import com.cwenhui.domain.model.response.Response;
 
 import rx.Observable;
 
@@ -12,5 +13,5 @@ import rx.Observable;
 
 public interface UserRepository {
 
-    Observable<User> login(String username, String pwd);
+    Observable<Response<User>> login(String username, String pwd);
 }

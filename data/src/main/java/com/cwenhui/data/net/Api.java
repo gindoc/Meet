@@ -1,6 +1,7 @@
 package com.cwenhui.data.net;
 
 import com.cwenhui.domain.model.User;
+import com.cwenhui.domain.model.response.Response;
 
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -15,6 +16,6 @@ import rx.Observable;
 public interface Api {
 
     @GET("user/{name}/{pwd}")
-    Observable<User> login(@Path("name") String username, @Path("pwd") String pwd);
+    Observable<Response<User>> login(@Path("name") String username, @Path("pwd") String pwd);
 
 }

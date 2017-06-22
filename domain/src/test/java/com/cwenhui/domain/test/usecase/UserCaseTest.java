@@ -1,6 +1,7 @@
 package com.cwenhui.domain.test.usecase;
 
 import com.cwenhui.domain.model.User;
+import com.cwenhui.domain.model.response.Response;
 import com.cwenhui.domain.repository.UserRepository;
 import com.cwenhui.domain.usecase.UserCase;
 
@@ -38,17 +39,21 @@ public class UserCaseTest {
 
     @Test
     public void testLogin() {
+        Response<User> response = new Response<>();
+        response.setErro_code(200);
+        response.setErro_msg("成功");
         final User user = new User();
-        user.setUsername("chenwenhui");
-        user.setPwd("heihei");
-        when(userRepository.login(anyString(), anyString())).thenReturn(Observable.just(user));
-        Observable<User> result = userCase.login(anyString(), anyString());
+        user.setUsername("gindoc");
+        user.setPwd("123456");
+        response.setData(user);
+        when(userRepository.login(anyString(), anyString())).thenReturn(Observable.just(response));
+        Observable<Response<User>> result = userCase.login(anyString(), anyString());
         verify(userRepository).login(anyString(), anyString());
-        result.subscribe(new Action1<User>() {
+        result.subscribe(new Action1<Response<User>>() {
             @Override
-            public void call(User result) {
-                Assert.assertEquals(result.getUsername(), user.getUsername());
-                Assert.assertEquals(result.getPwd(), user.getPwd());
+            public void call(Response<User> result) {
+                Assert.assertEquals(result.getData().getUsername(), user.getUsername());
+                Assert.assertEquals(result.getData().getPwd(), user.getPwd());
             }
         });
     }
