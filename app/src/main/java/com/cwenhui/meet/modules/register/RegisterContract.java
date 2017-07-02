@@ -15,5 +15,8 @@ public interface RegisterContract {
 
     interface Presenter extends IBasePresenter {
 
+        void getCaptcha(String phone);
+
+        void register(String phone, String captcha, String password);
     }
 }

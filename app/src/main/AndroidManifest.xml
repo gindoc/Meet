@@ -10,16 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-
         </activity>
-        <activity android:name=".modules.login.LoginActivity"
-            android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".modules.register.RegisterActivity">
+        <activity
+            android:name=".modules.login.LoginActivity"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".modules.register.RegisterActivity"
+            android:windowSoftInputMode="adjustPan">
         </activity>
     </application>
 

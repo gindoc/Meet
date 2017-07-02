@@ -3,6 +3,16 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="view"
+            type="com.cwenhui.meet.modules.register.RegisterContract.View"/>
+
+        <variable
+            name="activity"
+            type="com.cwenhui.meet.modules.register.RegisterActivity"/>
+    </data>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -123,6 +133,7 @@
                     android:textSize="@dimen/x10"
                     android:paddingRight="@dimen/x10"
                     android:text="发送验证码"
+                    android:onClick="@{()->activity.sendCaptcha()}"
                     android:textColor="@color/contentColor"/>
 
                 <View
@@ -141,6 +152,7 @@
                     android:textSize="@dimen/x13"
                     android:background="@drawable/color_primary_round_rect"
                     android:layout_below="@id/view_divider3"
+                    android:onClick="@{()->activity.register()}"
                     android:layout_marginTop="@dimen/x25"/>
 
             </RelativeLayout>

@@ -62,9 +62,11 @@ public class LoginActivity extends BaseActivity<LoginContract.View, LoginPresent
     public void login() {
         String phone = mBinding.tilPhone.getEditText().getText().toString();
         String pwd = mBinding.tilPwd.getEditText().getText().toString();
-        if (Validate.validatePhoneNum(phone)) {
+        if (!Validate.validatePhoneNum(phone)) {
+            mBinding.tilPhone.setErrorEnabled(true);
             mBinding.tilPhone.setError("请输入正确的手机号");
         } else if (StringUtils.isSpace(pwd)) {
+            mBinding.tilPwd.setErrorEnabled(true);
             mBinding.tilPwd.setError("请输入密码");
         } else {
             mBinding.tilPhone.setErrorEnabled(false);
